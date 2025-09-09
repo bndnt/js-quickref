@@ -3,14 +3,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Questrial&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="container">
-      <div>
+      <div class="pageCover">
         <h1>Шпори на JS без смс та реєстрації</h1>
+        <div class="blockLine"></div>
         <h2>Рядки</h2>
-        <div>
+        <div class="blockTopic">
           <h3>Довжина рядка</h3>
           <p>Властивості — це описові характеристики сутності.</p>
           <p>
@@ -255,8 +262,131 @@
             написати функцію, яка перетворює рядки зі snake_case (зміїної
             нотації з підкресленнями) в kebab-case (нотацію з тире).
           </p>
+          <code>
+            function transformString(string) { <br />const words =
+            string.split("_"); <br />
+            return words.join("-");<br />
+            } <br />transformString("user_age"); // "user-age" <br />
+            transformString("price_per_droid"); // "price-per-droid"
+          </code>
+        </div>
+        <div class="blockTopic">
+          <h3>Метод split()</h3>
+          <p>
+            Метод рядків split(delimiter) виконує зворотну операцію порівняно з
+            методом масивів join(delimiter). Він дозволяє перетворити рядок на
+            масив, розбивши його за вказаним роздільником delimiter.
+          </p>
+          <p>
+            Якщо роздільник є порожнім рядком (рядком, у якому нема символів),
+            то вийде масив окремих символів рядка. Роздільником може бути один
+            або кілька символів. Результат роботи методу можна зберегти у змінну
+            для подальшого використання.
+          </p>
+          <code>
+            const name = "Mango"; <br />const letters = name.split("");<br />
+            console.log(letters); // ["M", "a", "n", "g", "o"] const message =
+            "JavaScript essentials"; <br />const words = message.split(" ");
+            console.log(words); // ["JavaScript", "essentials"] <br />
+            const slug = "amazing-french-recipes"; <br />const slugParts =
+            slug.split("-"); <br />console.log(slugParts); // ["amazing",
+            "french", "recipes"]
+          </code>
+        </div>
+        <div class="blockTopic">
+          <h3>Метод slice()</h3>
+          <p>
+            Метод масиву slice(begin, end) повертає новий масив, що містить
+            копію частини вихідного масиву, не змінюючи його. Копія створюється
+            від індексу begin до, але не включаючи індекс end.
+          </p>
+          <img
+            src="https://s3.eu-north-1.amazonaws.com/lms.goit.files/b21ed4ba-dc3b-4927-be29-7797c141aee1Frame%2048599.jpg"
+            alt=""
+          />
+          <code>
+            const planets = ["Earth", "Mars", "Venus", "Jupiter", "Saturn"];
+            <br />
+            console.log(planets.slice(0, 2)); // ['Earth', 'Mars'] <br />
+            console.log(planets.slice(0, 4)); // ['Earth', 'Mars', 'Venus',
+            'Jupiter'] <br />
+            console.log(planets.slice(1, 3)); // ['Mars', 'Venus']
+          </code>
+        </div>
+        <div class="blockTopic">
+          <h3>Метод concat()</h3>
+          <p>
+            Метод concat(arr1, arr2, ..., arrN) використовується для об'єднання
+            двох або більше масивів.
+          </p>
+          <code>
+            const firstArray = ["Mercury", "Venus"];<br />
+            const secondArray = ["Mars", "Jupiter"];<br />
+            const result = firstArray.concat(secondArray);<br />
+            console.log(result); // ["Mercury", "Venus", "Mars", "Jupiter"];
+          </code>
+          <p>
+            Зверни увагу, що вихідні масиви firstArray і secondArray залишаються
+            незмінними після виклику concat(). Метод concat() створює і повертає
+            новий масив, що містить усі елементи об'єднаних масивів.
+          </p>
+          <p>
+            Порядок аргументів методу визначає порядок розташування елементів у
+            новому масиві.
+          </p>
+        </div>
+        <div class="blockTopic">
+          <h3>Метод indexOf()</h3>
+          <p>
+            Метод масиву indexOf(elem) використовується для визначення індексу
+            першого входження елемента elem у масиві. Він повертає індекс
+            елемента, якщо він знайдений, або -1, якщо елемент не знайдений.
+            Метод indexOf() виконує сувору рівність (===) при порівнянні
+            елементів.
+          </p>
+          <code>array.indexOf(elem)</code>
+          <ul>
+            <li>array — масив, у якому здійснюється пошук.</li>
+            <li>elem — елемент, індекс якого потрібно знайти в масиві.</li>
+          </ul>
+          <code
+            >const clients = ["Mango", "Ajax", "Poly", "Kiwi", "Poly"];<br />
+            console.log(clients.indexOf("Poly")); // 2 <br />
+            console.log(clients.indexOf("Monkong")); // -1
+          </code>
+        </div>
+        <div class="blockTopic">
+          <h3>Метод push()</h3>
+          <p>
+            Метод масиву push() використовується для додавання одного або більше
+            елементів у кінець масиву.
+          </p>
+          <img
+            src="https://s3.eu-north-1.amazonaws.com/lms.goit.files/3c2a2dbb-316f-4c0a-b29d-0800005b50ddFrame%2048601.jpg"
+            alt=""
+          />
+          <code> array.push(element1, element2, ..., elementN);</code>
+          <ul>
+            <li>
+              array — це вихідний масив, до якого потрібно додати елементи;
+            </li>
+            <li>
+              element1, element2, ..., elementN — елементи, які необхідно додати
+              в кінець масиву.
+            </li>
+          </ul>
+          <code
+            >const planets = ["Earth", "Mars", "Venus"];<br />
+            planets.push("Jupiter");<br />
+            console.log(planets); // ['Earth', 'Mars', 'Venus', 'Jupiter']
+            <br />
+            planets.push("Saturn", "Neptune"); <br />
+            console.log(planets); // ['Earth', 'Mars', 'Venus', 'Jupiter',
+            "Saturn", "Neptune"]
+          </code>
         </div>
       </div>
+      <button id="scrollTopBtn" class="scrollToTop">↑</button>
     </div>
 
     <script src="./script.js"></script>
