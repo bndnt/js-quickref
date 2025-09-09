@@ -13,14 +13,30 @@ body {
   width: 100%;
   max-width: 1240px;
 }
+.pageCover {
+  overflow: hidden;
+}
 h1 {
   font-size: 47px;
+  padding: 150px 0 0 0;
+  margin: 0 0 0 360px;
+  display: block;
+  width: 500px;
+}
+
+.titleImg {
+  position: absolute;
+  left: 0;
+  bottom: -46px;
+  width: 350px;
+  height: 350px;
 }
 code {
   display: block;
   color: #828282;
   margin: 10px 15px;
   font-size: 14px;
+  word-wrap: break-word;
 }
 
 mark {
@@ -38,6 +54,7 @@ mark {
   height: 1px;
   background-color: #828282;
   margin: 30px 0 40px;
+  position: relative;
 }
 p code {
   display: inline;
@@ -68,5 +85,59 @@ img {
     max-width: none;
     padding: 0 15px;
     width: calc(100% - 30px);
+  }
+}
+@media (max-width: 991px) {
+  h1 {
+    font-size: 38px;
+    padding: 100px 0 0 0;
+    margin: 0 0 0 209px;
+    display: block;
+    width: 400px;
+  }
+
+  .titleImg {
+    position: absolute;
+    left: -10px;
+    bottom: -27px;
+    width: 210px;
+    height: 210px;
+  }
+}
+@media (max-width: 550px) {
+  h1 {
+    font-size: 28px;
+    padding: 50px 0 0 0;
+    margin: 0 0 0 0;
+    display: block;
+    width: 200px;
+  }
+
+  .titleImg {
+    position: absolute;
+    left: auto;
+    right: -20px;
+    bottom: -25px;
+    width: 190px;
+    height: 190px;
+  }
+  .blockLine {
+    width: 100%;
+    height: 1px;
+    background-color: #828282;
+    margin: 53px 0 40px;
+  }
+  div img {
+    width: 100%;
+  }
+}
+@media (max-width: 375px) {
+  .titleImg {
+    position: absolute;
+    left: auto;
+    right: -20px;
+    bottom: -18px;
+    width: 140px;
+    height: 140px;
   }
 }
